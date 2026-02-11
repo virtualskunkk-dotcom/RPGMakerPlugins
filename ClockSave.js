@@ -1,5 +1,9 @@
+//this plugin adds a loading screen with a randomized message and a preset image to your game!
+//it was made specific to my game, but you're free to use it with your own graphics!
+//Simply change the parameters below to your liking
+
 (function() {
-    // Change the Save command text to "Pocket Watch"
+    // Change the Save command text to "Pocket Watch", change the text below based on what you want to do
     const _Window_MenuCommand_addSaveCommand = Window_MenuCommand.prototype.addSaveCommand;
     Window_MenuCommand.prototype.addSaveCommand = function() {
         if (this.needsCommand("save")) {
@@ -34,7 +38,7 @@
         this._blackSprite.bitmap.fillAll("black");
         this.addChild(this._blackSprite);
 
-        // Pick a random save message
+        // Pick a random save message, change these to whatever you want your save loading screen to say!
         const saveMessages = [
             "The hands tremble for a moment...",
             "The ticking sounds uneven.",
@@ -57,18 +61,18 @@
         this._textSprite.y = Graphics.height - 120;
         this.addChild(this._textSprite);
 
-        // Create the clock sprite (assumed size: 100x100)
+        // Create the loading image sprite
         this._clockSprite = new Sprite();
-        this._clockSprite.bitmap = ImageManager.loadPicture("PocketWatch");
-        // Use fixed values to center the clock image:
+        this._clockSprite.bitmap = ImageManager.loadPicture("PocketWatch"); //change to your image filename
+        // Use fixed values to center the image (assuming 100x100px image, change accordingly)
         this._clockSprite.x = (Graphics.width / 2) - 50;
         this._clockSprite.y = (Graphics.height / 2) - 50;
         this.addChild(this._clockSprite);
 
-        // Play the ticking sound effect
+        // Play the ticking sound effect, change to the name of whatever sound effect you want to use
         AudioManager.playSe({ name: "Clock_Tick", volume: 80, pitch: 100, pan: 0 });
 
-        // Wait time in frames (150 frames ~2.5 seconds)
+        // Wait time in frames (150 frames ~2.5 seconds), change this to how long you want the loading screen to linger on screen
         this._waitTime = 150;
     };
 
@@ -83,3 +87,4 @@
         }
     };
 })();
+
