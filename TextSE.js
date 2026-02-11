@@ -1,5 +1,5 @@
 (function() {
-    const SCRIBBLE_SE_LIST = ["scribble1", "scribble2", "scribble3"]; // Scribble SE list
+    const SCRIBBLE_SE_LIST = ["scribble1", "scribble2", "scribble3"]; // Scribble SE list, change this to your speech/letter sound effects!
     const SCRIBBLE_SE_VOLUME = 100;
     const SCRIBBLE_SE_PITCH = 100;
     const SCRIBBLE_SE_PAN = 0;
@@ -26,3 +26,4 @@
         return result;
     };
 })();
+
