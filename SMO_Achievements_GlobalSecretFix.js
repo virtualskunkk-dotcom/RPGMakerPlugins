@@ -8,7 +8,7 @@
  * achievement's visibility is set to “Secret” but no entry for it exists
  * in the global data, its state defaults to 0 (locked).  The core
  * plugin uses the dynamic `state` field to determine whether an
- * achievement is secret or not, so in this edge‑case the secret flag
+ * achievement is secret or not, so in this edge case the secret flag
  * can be lost and the achievement’s real name will be drawn even
  * though the secret image is still used.
  *
